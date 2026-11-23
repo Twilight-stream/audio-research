@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nearfield_tse"
+version = "0.1.0"
+description = "Foundations for monaural, enrollment-free distance-based TSE"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.0", "numpy>=1.23", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
